@@ -1,0 +1,104 @@
+Config { font = "xft:Hack:weight=bold:pixelsize=14:antialias=true:hinting=true"
+       , additionalFonts = [
+							"xft:Hack Nerd Font Mono:pixelsize=26:antialias=true:hinting=true" -- default glyphs
+							,"xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=true" -- battery glyph
+							, "xft:Hack Nerd Font Mono:pixelsize=20:antialias=true:hinting=true" -- calendar and termometer glyph
+							, "xft:Hack Nerd Font Mono:pixelsize=30:antialias=true:hinting=true" -- arch-linux glyph
+							, "xft:Hack Nerd Font Mono:pixelsize=24:antialias=true:hinting=true"
+							, "xft:Hack Nerd Font Mono:pixelsize=25:antialias=true:hinting=true"
+							]
+       --, borderColor = "black"
+       --, border = TopB
+       , bgColor = "#2B2B2B"
+       , fgColor = "#d3d3d3"
+       , alpha = 255
+       , position = Static { xpos = 0 , ypos = 0, width = 1920, height = 20 }
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "~/.xmonad/xpm/" -- default "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands =	[
+						-- Weather (Temperature)
+						Run Weather "MUHA" ["-t","<fc=#87CEEB><fn=2>\xf2ca</fn></fc> Havana: <tempC>ºC",
+                                          "-L","18","-H","25",
+                                          "--normal","green",
+                                          "--high","red",
+                                          "--low","lightblue"] 36000
+
+						-- Wired Connection
+						-- , Run Network "enp4s0" ["-t","<fc=#008000><fn=1>\xf700</fn></fc>  <fn=1>\xf433</fn>  <rx>kB  <fn=1>\xf431</fn>  <tx>kB"] 20
+
+						-- Wireless Connection
+						--, Run Network "wlp5s0" ["-t","<fc=#00FF00><fn=1>\xf1eb</fn></fc>  <fn=1>\xf433</fn>  <rx>kB/s  <fn=1>\xf431</fn>  <tx>kB/s"] 20
+
+						-- Network connection
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/net_usage.sh" ["#2B2B2B"] "net_usage" 10
+
+						-- Cpu Usage percentage
+						--, Run Cpu ["-L","3","-H","50", "--normal","green","--high","red", "-t", "<total>%"] 10
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/cpu_usage.sh" ["#2B2B2B", "#87CEEB", "#006400", "#d3e342", "#de3535"] "cpu_usage" 10
+
+						-- Memory (RAM) usage in percentage
+						--, Run Memory ["-t","<fc=#2B2B2B,#87CEEB><fn=5>\xf85a</fn></fc><fc=#2B2B2B,#87CEEB> <usedratio>%</fc>"] 10
+						
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/mem_usage.sh" 
+						["#87CEEB", "#2B2B2B", "#32CD32", "#d3e342", "#de3535"] "mem_usage" 10
+
+						-- Disks Status
+						, Run DiskU [("/", "<free> -"), ("/run/media/nogard/2TBBarracuda", "<free>")] [] 60
+
+						-- Swap memory usage in percentage
+						--, Run Swap [] 10
+
+						-- OS kernel and version
+						, Run Com "uname" ["-s","-r"] "" 36000
+
+						-- Pacman updates
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/pack_update.sh"
+						["#87CEEB", "#2B2B2B", "", "", ""] "pack_update" 36000
+
+						-- Workspaces
+						, Run StdinReader
+
+						-- Date and Time
+						, Run Date "<fn=3>\xf073</fn> %a %b %_d, %H:%M" "date" 50
+
+						-- Battery status
+						, Run Battery [
+							"-t", "<fn=2>\xf583</fn><fn=2> <acstatus>: <left>%</fn>",
+							"--",
+							--"-c", "charge_full",
+							"-O", "AC",
+							"-o", "Bat",
+							"-h", "#006400",
+							"-l", "#DC143C"
+						] 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%cpu_usage%\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\%mem_usage%\
+					\<fc=#87CEEB><fn=5> </fn></fc>\
+					\%net_usage%\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\<fc=#87CEEB,#2B2B2B><fn=4></fn></fc><fc=#87CEEB,#2B2B2B><fn=2> </fn></fc>\
+					\%pack_update%\
+					\<fc=#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=3></fn></fc><fn=2><fc=#2B2B2B,#87CEEB> %disku% </fc></fn>\
+					\<fc=#2B2B2B,#87CEEB><fn=5></fn></fc>\
+					\<fn=2>%StdinReader%</fn> }\
+                    \{ <fc=#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=2>%date%</fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\ %MUHA%\
+					\<fc=#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB>%battery%</fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\<fc=#00FFFF><fn=4></fn></fc> %uname%"
+       }

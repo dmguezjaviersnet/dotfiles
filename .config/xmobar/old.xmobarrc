@@ -1,0 +1,79 @@
+Config { font = "xft:Hack:weight=bold:size=10:antialias=true:hinting=true"
+       , additionalFonts = ["xft:Hack Nerd Font Mono:pixelsize=26:antialias=true:hinting=true" -- default glyphs
+							,"xft:Hack Nerd Font Mono:pixelsize=16:antialias=true:hinting=true" -- battery glyph
+							, "xft:Hack Nerd Font Mono:pixelsize=20:antialias=true:hinting=true" -- calendar and termometer glyph
+							, "xft:Hack Nerd Font Mono:pixelsize=30:antialias=true:hinting=true" -- arch-linux glyph
+							]
+       --, borderColor = "black"
+       --, border = TopB
+       , bgColor = "#2B2B2B"
+       , fgColor = "#d3d3d3"
+       , alpha = 120
+       , position = Static { xpos = 0 , ypos = 0, width = 1920, height = 22 }
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "~/.xmonad/xpm/" -- default "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands =	[
+						-- Weather (Temperature)
+						Run Weather "MUHA" ["-t","<fc=#87CEEB><fn=2>\xf2ca</fn></fc> Havana: <tempC>ºC",
+                                          "-L","18","-H","25",
+                                          "--normal","green",
+                                          "--high","red",
+                                          "--low","lightblue"] 36000
+
+						-- Wired Connection
+						-- , Run Network "enp4s0" ["-t","<fc=#008000><fn=1>\xf700</fn></fc>  <fn=1>\xf433</fn>  <rx>kB  <fn=1>\xf431</fn>  <tx>kB"] 20
+
+						-- Wireless Connection
+						--, Run Network "wlp5s0" ["-t","<fc=#00FF00><fn=1>\xf1eb</fn></fc>  <fn=1>\xf433</fn>  <rx>kB/s  <fn=1>\xf431</fn>  <tx>kB/s"] 20
+
+						-- Cpu Usage percentage
+						, Run Cpu ["-L","3","-H","50", "--normal","green","--high","red"] 10
+
+						-- Memory (RAM) usage in percentage
+						, Run Memory ["-t","<fc=#87CEEB><fn=1>\xf85a</fn></fc> <usedratio>%"] 10
+
+						-- Disks Status
+						, Run DiskU [("/", "<free> -"), ("/run/media/nogard/2TBBarracuda", "<free>")] [] 60
+
+						-- Swap memory usage in percentage
+						, Run Swap [] 10
+
+						-- OS kernel and version
+						, Run Com "uname" ["-s","-r"] "" 36000
+
+						-- Pacman updates
+						, Run Com "/home/nogard/bin/pack_update" [] "pack_update" 36000
+
+						-- Workspaces
+						, Run StdinReader
+
+						-- Network connection
+						, Run Com "/home/nogard/bin/net_usage" [] "net_usage" 10
+
+						-- Date and Time
+						, Run Date "<fc=#87CEEB><fn=3>\xf073</fn></fc>  %a %b %_d %Y, %H:%M" "date" 50
+
+						-- Battery status
+						, Run Battery [
+							"-t", "<fc=#87CEEB><fn=2>\xf583</fn></fc> <acstatus>: <left>% - <timeleft>",
+							"--",
+							--"-c", "charge_full",
+							"-O", "AC",
+							"-o", "Bat",
+							"-h", "green",
+							"-l", "red"
+						] 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "<fc=#87CEEB><fn=3></fn></fc> %cpu% | %memory% - %swap% | %net_usage% |
+ <fc=#87CEEB><fn=1></fn></fc> %pack_update% | <fc=#87CEEB><fn=3></fn></fc> %disku% | <fn=2>%StdinReader%</fn> }\
+                    \{ %date% | %battery% | %MUHA% | <fc=#00FFFF><fn=4></fn></fc> %uname%"
+       }

@@ -45,15 +45,17 @@ Plug 'akinsho/flutter-tools.nvim'
 
 -- Utilf
 Plug 'akinsho/toggleterm.nvim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'     -- Auto close ({[]})
 Plug 'tpope/vim-commentary'     -- Toggle comentaries on code
 Plug 'vim-airline/vim-airline'  -- Powerline
 Plug 'SirVer/ultisnips'			-- Some snippets
+Plug 'thomasfaingnaert/vim-lsp-ultisnips' --LSP snippets integration for SirVer ultisnip
 Plug 'puremourning/vimspector'	-- Debugging
 Plug 'tpope/vim-fugitive'		-- Git
 Plug 'junegunn/gv.vim'
 Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'alvan/vim-closetag' -- Auto close tags
 
 -- Initialize plugin system
 vim.call('plug#end')

@@ -74,6 +74,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 	-- take screenshot with flameshot
 	, ((modm, xK_s), spawn "flameshot gui")
 
+	-- volume control
+    , ((modm, xK_F11), spawn "amixer -q sset Master 5%-")
+    , ((modm, xK_F12), spawn "amixer -q sset Master 5%+")
+    , ((modm, xK_F10), spawn "amixer set Master toggle")
+
 	-- toggle full-screen in focused window
 	, ((modm, xK_f), sendMessage(Toggle "Full"))
 
@@ -281,7 +286,7 @@ main = do
 			ppOutput = \x -> hPutStrLn xmproc x
 			, ppCurrent = xmobarColor "#87CEEB" ""
 			, ppVisible = xmobarColor "grey" ""
-			, ppHidden = xmobarColor "grey" ""
+			, ppHidden = xmobarColor "white" ""
 			, ppHiddenNoWindows = xmobarColor "grey" ""
 			, ppTitle = xmobarColor "#87CEEB" "" . shorten 42
 			, ppOrder =	\(ws:t:ex) -> [ws]++ex 

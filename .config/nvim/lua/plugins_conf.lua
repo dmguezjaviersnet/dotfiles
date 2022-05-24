@@ -10,6 +10,7 @@ vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 
 -- Telescope
 require('telescope').setup{ defaults = { file_ignore_patterns = {".git"} } }
+require('telescope').load_extension('flutter')
 
 -- Trouble
 require("trouble").setup {}
@@ -45,8 +46,11 @@ cmd [[ autocmd FileType markdown :normal zR ]]
 -- Pyright
 cmd [[autocmd FileType python map <F5> :!python %<CR>]]
 
--- Autoclose tags
+-- Dart
+cmd [[ autocmd FileType dart setlocal softtabstop=2 ]]
+cmd [[ autocmd FileType dart setlocal shiftwidth=2 ]]
 
+-- Autoclose tags
 --" filenames like *.xml, *.html, *.xhtml, ...
 -- These are the file extensions where this plugin is enabled.
 

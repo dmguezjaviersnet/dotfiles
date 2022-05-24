@@ -11,7 +11,11 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# env variables
+# //\\// -------------------------------- env variables ---------------------------------- //\\//
+
+export LESS='-R'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export BROWSER="/usr/bin/google-chrome-stable"
 export EDITOR="/usr/bin/nvim"
 export PATH="$HOME/bin:$PATH"
@@ -20,10 +24,12 @@ export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 export PATH=$HOME/Android/Sdk/platform-tools:$PATH
 export PATH=$HOME/Android/Sdk/tools:$PATH
 export PATH=$HOME/Android/ndk-build:$PATH
-export PATH=$HOME/my_apps/flutter/common/flutter/bin:$PATH
+export PATH=$HOME/my_apps/flutter/bin:$PATH
+# export PATH=$HOME/my_apps/flutter/bin/cache/dart-sdk/bin:$PATH
 export JAVA_HOME=$HOME/my_apps/android-studio/jre
 
-# nnn config env variables
+# //\\// ------------------------------- nnn config ------------------------------------- //\\//
+
 export NNN_COPIER=$HOME/bin/nnn_copier 
 # Context FG colors
 export NNN_COLORS='#75757575'
@@ -45,9 +51,12 @@ export NNN_FCOLORS=$BLK$CHR$DIR$EXE$REG$HARDLIN$SYMLINK$MISSING$ORPHAN$FIFO$SOCK
 export NNN_PLUG_DEFAULT='1:ipinfo'
 # export NNN_PLUG_COLOR='w:wallpaper'
 export NNN_PLUG_PREVIEW='p:preview-tui;t:preview-tabbed;i:imgview'
-export NNN_PLUG_FILES='f:fzcd;m:mimelist;o:fzopen;b:nbak;w:rsynccp'
+export NNN_PLUG_FILES='f:fzcd;m:mimelist;o:fzopen;b:nbak;w:rsynccp;n:fixname;e:suedit'
 export NNN_PLUG="$NNN_PLUG_DEFAULT;$NNN_PLUG_PREVIEW;$NNN_PLUG_FILES"
 export NNN_FIFO="/tmp/nnn.fifo"
+
+# //\\// ------------------------------- zsh-config ------------------------------------- //\\//
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -116,12 +125,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-autosuggestions
 	zsh-syntax-highlighting
 	web-search
+	zsh-autosuggestions
 )
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -152,9 +161,10 @@ source $ZSH/oh-my-zsh.sh
 alias nv="nvim"
 alias redmi_10_hotspot="netctl start my_redmi10_profile"
 alias random_nightcore="mpv --shuffle  --playlist=/home/nogard/.config/cmus/playlists/pure_nightcore"
-alias n3="nnn -aeidur"
+alias n3="/home/nogard/bin/nnn_inside_tmux"
+
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
-alias vpn='sh ~/bin/vpn/vpn.sh'
+# alias vpn='sh ~/bin/vpn/vpn.sh'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

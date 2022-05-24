@@ -65,6 +65,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask,  xK_Return), spawn $ XMonad.terminal conf)
 
+	--launch alacritty + tmux
+	, ((modm .|. shiftMask,  xK_t), spawn "alacritty -e tmux")
+
+	--launch nnn
+	-- , ((modm .|. shiftMask,  xK_n), spawn "alacritty -e n3")
+
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run -c -l 20")
 

@@ -1,13 +1,13 @@
 local function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
+		vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true })
 end
 
 local function nmap(shortcut, command)
-  map('n', shortcut, command)
+		map('n', shortcut, command)
 end
 
 local function imap(shortcut, command)
-  map('i', shortcut, command)
+		map('i', shortcut, command)
 end
 
 nmap("n", "nzz")
@@ -23,8 +23,8 @@ nmap("K", "7k")
 
 nmap("//", ":vs<CR>")
 nmap("--", ":sp<CR>")
-
--- nmap("<leader>rc", "//:e ~/.config/nvim/init.vim<CR>")
+nmap ("<leader>te", "<cmd>terminal<CR>")
+-- nmap("<leader>rc", ":e ~/.config/nvim/init.vim<CR>")
 nmap("<leader>rl", ":so ~/.config/nvim/init.lua<CR>")
 nmap("<leader>p", ":PlugInstall<Enter>")
 nmap("<C-S>", ":update<CR>")
@@ -45,3 +45,4 @@ nmap("<leader>fg", ":Telescope live_grep<CR>")
 nmap("<leader>fb", ":Telescope buffers<CR>")
 nmap("<leader>fh", ":Telescope help_tags<CR>")
 nmap("<leader>gb", ":Telescope git_branches<CR>")
+nmap("<leader>fc", ":Telescope flutter commands<CR>")

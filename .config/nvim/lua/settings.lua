@@ -23,13 +23,13 @@ vim.g.airline_powerline_fonts = 1
 -- filetype off
 -- filetype plugin indent on
 vim.cmd [[
-  colorscheme darcula
-  hi SignColumn guibg=none
-  hi LineNr guibg=none
-  highlight ColorColumn ctermbg=7 
-  hi DiagnosticError guifg=#CC6666
-  hi DiagnosticWarn  guifg=#F0C674
-  hi DiagnosticInfo  guifg=#81A2BE
-  hi DiagnosticHint  guifg=#B5BD68
+		colorscheme darcula
+		hi SignColumn guibg=none
+		hi LineNr guibg=none
+		highlight ColorColumn ctermbg=7 
+		hi DiagnosticError guifg=#CC6666
+		hi DiagnosticWarn  guifg=#F0C674
+		hi DiagnosticInfo  guifg=#81A2BE
+		hi DiagnosticHint  guifg=#B5BD68
 ]]
 

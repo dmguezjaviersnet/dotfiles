@@ -22,6 +22,7 @@ vim.g.mapleader = " "
 vim.g.airline_powerline_fonts = 1
 -- filetype off
 -- filetype plugin indent on
+
 vim.cmd [[
 		colorscheme darcula
 		hi SignColumn guibg=none

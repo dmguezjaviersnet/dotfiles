@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source /etc/profile
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -13,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # //\\// -------------------------------- env variables ---------------------------------- //\\//
 
-export LESS='-R'
+export PAGER='less -R'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export BROWSER="/usr/bin/google-chrome-stable"
@@ -51,7 +53,7 @@ export NNN_FCOLORS=$BLK$CHR$DIR$EXE$REG$HARDLIN$SYMLINK$MISSING$ORPHAN$FIFO$SOCK
 export NNN_PLUG_DEFAULT='1:ipinfo'
 # export NNN_PLUG_COLOR='w:wallpaper'
 export NNN_PLUG_PREVIEW='p:preview-tui;t:preview-tabbed;i:imgview'
-export NNN_PLUG_FILES='f:fzcd;m:mimelist;o:fzopen;b:nbak;w:rsynccp;n:fixname;e:suedit'
+export NNN_PLUG_FILES='f:fzcd;m:mimelist;o:fzopen;b:nbak;w:rsynccp;n:fixname;e:suedit;j:autojump'
 export NNN_PLUG="$NNN_PLUG_DEFAULT;$NNN_PLUG_PREVIEW;$NNN_PLUG_FILES"
 export NNN_FIFO="/tmp/nnn.fifo"
 
@@ -162,7 +164,6 @@ alias nv="nvim"
 alias redmi_10_hotspot="netctl start my_redmi10_profile"
 alias random_nightcore="mpv --shuffle  --playlist=/home/nogard/.config/cmus/playlists/pure_nightcore"
 alias n3="/home/nogard/bin/nnn_inside_tmux"
-
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
 # alias vpn='sh ~/bin/vpn/vpn.sh'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

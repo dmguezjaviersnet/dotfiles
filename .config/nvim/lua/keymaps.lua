@@ -18,8 +18,10 @@ nmap("#", ":set hlsearch<CR>#")
 nmap("*", ":set hlsearch<CR>*")
 
 imap("<C-Space>", "<C-X><C-O>")
-nmap("J", "7j")
-nmap("K", "7k")
+
+nmap("<leader>e", ":Ex<CR>")
+-- nmap("J", "7j")
+-- nmap("K", "7k")
 
 nmap("//", ":vs<CR>")
 nmap("--", ":sp<CR>")

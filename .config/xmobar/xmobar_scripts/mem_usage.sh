@@ -35,4 +35,4 @@ else
 	COLOR=$GREEN
 fi
 
-echo "<fc=$FG$BG><fn=1> </fn></fc><fc=$COLOR$BG>$F_PERCENT %</fc>"
+echo "<fc=$FG$BG><fn=1> </fn></fc><fc=$COLOR$BG>$F_PERCENT%</fc>"

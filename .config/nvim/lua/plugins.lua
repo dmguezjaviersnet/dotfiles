@@ -24,7 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0ng/vim-hybrid'
 -- plug 'cocopon/iceberg.vim'
 
---Syntax highlighting 
+-- Syntax highlighting 
 Plug 'nvim-treesitter/nvim-treesitter'
 
 -- Languages
@@ -59,6 +59,7 @@ Plug 'akinsho/flutter-tools.nvim'
 
 -- Utilf
 Plug 'akinsho/toggleterm.nvim'
+Plug 'rcarriga/nvim-notify' -- Notification manager
 Plug 'jiangmiao/auto-pairs'     -- Auto close ({[]})
 Plug 'tpope/vim-commentary'     -- Toggle comentaries on code
 Plug 'vim-airline/vim-airline'  -- Powerline

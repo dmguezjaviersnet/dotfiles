@@ -1,4 +1,4 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
+# Configuration for Alacritty, the GPU enhanced Nerd Fontinal emulator.
 
 # Import additional configuration files
 #
@@ -14,17 +14,17 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 # env:
-# TERM variable
+# Nerd Font variable
 #
-# This value is used to set the `$TERM` environment variable for
+# This value is used to set the `$Nerd Font` environment variable for
 # each instance of Alacritty. If it is not present, alacritty will
-# check the local terminfo database and use `alacritty` if it is
-# available, otherwise `xterm-256color` is used.
-  # TERM: screen-256color
+# check the local Nerd Fontinfo database and use `alacritty` if it is
+# available, otherwise `xNerd Font-256color` is used.
+  # Nerd Font: screen-256color
 #window:
 # Window dimensions (changes require restart)
 #
-# Number of lines/columns (not pixels) in the terminal. The number of columns
+# Number of lines/columns (not pixels) in the Nerd Fontinal. The number of columns
 # must be at least `2`, while using a value of `0` for columns and lines will
 # fall back to the window manager's recommended size.
 #dimensions:
@@ -44,7 +44,7 @@
 #padding:
 #  x: 0
 #  y: 0
-# Spread additional padding evenly around the terminal content.
+# Spread additional padding evenly around the Nerd Fontinal content.
 #dynamic_padding: false
 # Window decorations
 #
@@ -73,7 +73,7 @@
 #startup_mode: Windowed
 # Window title
 #title: Alacritty
-# Allow terminal applications to change Alacritty's window title.
+# Allow Nerd Fontinal applications to change Alacritty's window title.
 #dynamic_title: true
 # Window class (Linux/BSD only):
 #class:
@@ -102,7 +102,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Hack Nerd Font
+    family: Iosevka Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Regular
     # Bold font face
@@ -111,7 +111,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack Nerd Font
+    family: Iosevka Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold
     # Italic font face
@@ -120,7 +120,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack Nerd Font
+    family: Iosevka Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Italic
     # Bold italic font face
@@ -129,7 +129,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack Nerd Font
+    family: Iosevka Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
     # Point size
@@ -140,7 +140,7 @@ font:
     #offset:
     #  x: 0
     #  y: 0
-    # Glyph offset determines the locations of the glyphs within their cells with
+    # Glyph offset deNerd Fontines the locations of the glyphs within their cells with
     # the default being at the bottom. Increasing `x` moves the glyph to the
     # right, increasing `y` moves the glyph upward.
     #glyph_offset:
@@ -175,7 +175,7 @@ font:
     #bright_foreground: '#eaeaea'
     # Cursor colors
     #
-    # Colors which should be used to draw the terminal cursor.
+    # Colors which should be used to draw the Nerd Fontinal cursor.
     #
     # Allowed values are CellForeground/CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.

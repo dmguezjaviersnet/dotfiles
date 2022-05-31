@@ -1,11 +1,11 @@
-Config { font = "xft:Hack:weight=bold:pixelsize=14:antialias=true:hinting=true"
+Config { font = "xft:Iosevka:weight=bold:pixelsize=14:antialias=true:hinting=true"
        , additionalFonts = [
-							"xft:Hack Nerd Font Mono:pixelsize=26:antialias=true:hinting=true" -- default glyphs
-							,"xft:Hack Nerd Font Mono:pixelsize=15:antialias=true:hinting=true" -- battery glyph
-							, "xft:Hack Nerd Font Mono:pixelsize=20:antialias=true:hinting=true" -- calendar and termometer glyph
-							, "xft:Hack Nerd Font Mono:pixelsize=30:antialias=true:hinting=true" -- arch-linux glyph
-							, "xft:Hack Nerd Font Mono:pixelsize=24:antialias=true:hinting=true"
-							, "xft:Hack Nerd Font Mono:pixelsize=25:antialias=true:hinting=true"
+							"xft:Iosevka Nerd Font Mono:pixelsize=18:antialias=true:hinting=true" -- default glyphs
+							,"xft:Iosevka Nerd Font:pixelsize=18:antialias=true:hinting=true" -- battery glyph
+							, "xft:Iosevka Nerd Font:pixelsize=14:antialias=true:hinting=true" -- calendar and termometer glyph
+							, "xft:Iosevka Nerd Font:pixelsize=15:antialias=true:hinting=true" -- arch-linux glyph
+							, "xft:Iosevka Nerd Font:pixelsize=20:antialias=true:hinting=true"
+							, "xft:Iosevka Nerd Font:pixelsize=16:antialias=true:hinting=true" --disk glyph
 							]
        --, borderColor = "black"
        --, border = TopB
@@ -66,11 +66,11 @@ Config { font = "xft:Hack:weight=bold:pixelsize=14:antialias=true:hinting=true"
 						, Run StdinReader
 
 						-- Date and Time
-						, Run Date "<fn=3>\xf073</fn> %a %b %_d, %H:%M" "date" 50
+						, Run Date "<fn=3>\xf073  </fn>%a %b %_d, %H:%M" "date" 50
 
 						-- Battery status
 						, Run Battery [
-							"-t", "<fn=2>\xf583</fn><fn=2> <acstatus>: <left>%</fn>",
+							"-t", "<fn=2>\xf583 </fn><acstatus>: <left>%",
 							"--",
 							--"-c", "charge_full",
 							"-O", "AC",
@@ -82,23 +82,23 @@ Config { font = "xft:Hack:weight=bold:pixelsize=14:antialias=true:hinting=true"
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%cpu_usage%\
-					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\<fc=#87CEEB,#2B2B2B><fn=5> </fn></fc>\
 					\%mem_usage%\
-					\<fc=#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
 					\%net_usage%\
-					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
-					\<fc=#87CEEB,#2B2B2B><fn=4></fn></fc><fc=#87CEEB,#2B2B2B><fn=2> </fn></fc>\
+					\<fc=#87CEEB,#2B2B2B><fn=5> </fn></fc>\
+					\<fc=#87CEEB,#2B2B2B><fn=4>  </fn></fc><fc=#87CEEB,#2B2B2B><fn=2></fn></fc>\
 					\%pack_update%\
-					\<fc=#87CEEB><fn=5> </fn></fc>\
-					\<fc=#2B2B2B,#87CEEB><fn=3></fn></fc><fn=2><fc=#2B2B2B,#87CEEB> %disku% </fc></fn>\
-					\<fc=#2B2B2B,#87CEEB><fn=5></fn></fc>\
-					\<fn=2>%StdinReader%</fn> }\
-                    \{ <fc=#87CEEB><fn=5> </fn></fc>\
-					\<fc=#2B2B2B,#87CEEB><fn=2>%date%</fn></fc>\
-					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=6> </fn></fc><fc=#2B2B2B,#87CEEB>%disku% </fc>\
+					\<fc=#87CEEB,#2B2B2B><fn=5> </fn></fc>\
+					\%StdinReader% }\
+                    \{ <fc=#87CEEB><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB>%date%</fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
 					\ %MUHA%\
-					\<fc=#87CEEB><fn=5> </fn></fc>\
+					\<fc=#87CEEB><fn=5> </fn></fc>\
 					\<fc=#2B2B2B,#87CEEB>%battery%</fc>\
-					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
-					\<fc=#00FFFF><fn=4></fn></fc> %uname%"
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
+					\<fc=#00FFFF><fn=4> </fn></fc> %uname%"
        }

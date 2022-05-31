@@ -112,13 +112,12 @@ require("flutter-tools").setup {
 lsp_installer.on_server_ready(function(server)
     local opts = { on_attach = on_attach }
 		if server.name == "sumneko_lua" then
-				opts.settings = {
-						Lua = {
-								diagnostics = {
-										globals = { 'vim', 'use'}
-								}
-						}
-				}
+		  local sumneko_opts = require('user.lsp.settings.sumneko_lua')
+		  opts = vim.tbl_deep_extend('force', sumneko_opts, opts)
+		end
+
+		if server.name == "dartls" then
+		  return
 		end
     server:setup(opts)
 end)

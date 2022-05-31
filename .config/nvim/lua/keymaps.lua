@@ -20,6 +20,7 @@ nmap("*", ":set hlsearch<CR>*")
 imap("<C-Space>", "<C-X><C-O>")
 
 nmap("<leader>e", ":Ex<CR>")
+nmap("<leader>sm", ":Gvdiffsplit!<CR>")
 -- nmap("J", "7j")
 -- nmap("K", "7k")
 

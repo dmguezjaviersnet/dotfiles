@@ -81,9 +81,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 	, ((modm, xK_s), spawn "flameshot gui")
 
 	-- volume control
-    , ((modm, xK_F11), spawn "amixer -q sset Master 5%-")
-    , ((modm, xK_F12), spawn "amixer -q sset Master 5%+")
-    , ((modm, xK_F10), spawn "amixer set Master toggle")
+    , ((0, 0x1008ff11), spawn "amixer -q sset Master 5%-")
+    , ((0, 0x1008ff13), spawn "amixer -q sset Master 5%+")
+    , ((0, 0x1008ff12), spawn "amixer set Master toggle")
+
+	--brightness control
+    , ((0, 0x1008ff02), spawn "xbacklight -inc 5")
+    , ((0, 0x1008ff03), spawn "xbacklight -dec 5")
 
 	-- toggle full-screen in focused window
 	, ((modm, xK_f), sendMessage(Toggle "Full"))

@@ -5,17 +5,6 @@ local cmd = vim.cmd
 -- vim.g.airline_theme = "bubblegum"
 -- cmd [[ let g:airline#extensions#tabline#enabled = 0 ]]
 
--- Treesitter
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
 -- FZF
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 
@@ -57,12 +46,8 @@ cmd [[ autocmd FileType markdown :normal zR ]]
 -- Pyright
 cmd [[autocmd FileType python map <F5> :!python %<CR>]]
 
--- Dart
-cmd [[ autocmd FileType dart setlocal softtabstop=2 ]]
-cmd [[ autocmd FileType dart setlocal shiftwidth=2 ]]
-
 -- Autoclose tags
---" filenames like *.xml, *.html, *.xhtml, ...
+-- filenames like *.xml, *.html, *.xhtml, ...
 -- These are the file extensions where this plugin is enabled.
 
 local closetag_filenames = '*.html,*.xhtml,*.phtml'

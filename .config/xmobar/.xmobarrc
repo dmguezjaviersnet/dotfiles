@@ -1,7 +1,7 @@
 Config { font = "xft:Iosevka:weight=bold:pixelsize=14:antialias=true:hinting=true"
        , additionalFonts = [
-							"xft:Iosevka Nerd Font Mono:pixelsize=18:antialias=true:hinting=true" -- default glyphs
-							,"xft:Iosevka Nerd Font:pixelsize=18:antialias=true:hinting=true" -- battery glyph
+							"xft:Iosevka Nerd Font:pixelsize=18:antialias=true:hinting=true" -- default glyphs
+							,"xft:Iosevka Nerd Font:pixelsize=16:antialias=true:hinting=true" -- battery glyph
 							, "xft:Iosevka Nerd Font:pixelsize=14:antialias=true:hinting=true" -- calendar and termometer glyph
 							, "xft:Iosevka Nerd Font:pixelsize=15:antialias=true:hinting=true" -- arch-linux glyph
 							, "xft:Iosevka Nerd Font:pixelsize=20:antialias=true:hinting=true"

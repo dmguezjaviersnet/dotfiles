@@ -5,12 +5,14 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'godlygeek/tabular'
 
--- Navegation
+-- //\\// Navegation //\\//
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf'
+Plug 'kyazdani42/nvim-tree.lua'
 -- Plug 'preservim/nerdtree'
 
--- Themes
+-- //\\// Themes and icons //\\//
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'doums/darcula'
 Plug 'briones-gabriel/darcula-solid.nvim'
@@ -23,15 +25,19 @@ Plug 'rktjmp/lush.nvim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0ng/vim-hybrid'
 -- plug 'cocopon/iceberg.vim'
+--
+-- //\\// Status bar //\\//
+Plug 'nvim-lualine/lualine.nvim'
+-- Plug 'vim-airline/vim-airline'  -- Powerline written in vimscript
 
--- Syntax highlighting 
+-- //\\/ Syntax highlighting //\\//
 Plug 'nvim-treesitter/nvim-treesitter'
 
--- Languages
+-- //\\// Languages //\\//
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 
--- Languages general
+-- //\\// Languages general, LSP, snippets, code actions, linting, etc //\\//
 Plug 'neovim/nvim-lsp'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
@@ -40,34 +46,33 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug "quangnguyen30192/cmp-nvim-ultisnips"
-Plug 'thomasfaingnaert/vim-lsp-ultisnips' -- LSP snippets integration for SirVer ultisnip
-Plug "rafamadriz/friendly-snippets" -- Some snippets
-Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
 Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
-Plug 'honza/vim-snippets'		-- Some snippets
-Plug 'dense-analysis/ale'		-- Linter
-Plug 'kyazdani42/nvim-web-devicons'
+Plug "quangnguyen30192/cmp-nvim-ultisnips" --Autocompleter for ultisnips
+Plug 'thomasfaingnaert/vim-lsp-ultisnips' -- LSP snippets integration for SirVer ultisnip
+-- Plug "rafamadriz/friendly-snippets" -- Some snippets
+-- Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
+-- Plug 'honza/vim-snippets'		-- Some snippets
+-- Plug 'dense-analysis/ale'		-- Linter
 Plug 'folke/trouble.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
--- Dart Flutter
+-- //\\// Dart flutter //\\//
 -- Plug 'dart-lang/dart-vim-plugin'
 -- Plug 'thosakwe/vim-flutter'
 Plug 'akinsho/flutter-tools.nvim'
 -- Plug 'natebosch/vim-lsc'
 -- Plug 'natebosch/vim-lsc-dart'
 
--- Utilf
-Plug 'akinsho/toggleterm.nvim'
-Plug 'rcarriga/nvim-notify' -- Notification manager
+-- //\\// Utils //\\//
+Plug 'akinsho/toggleterm.nvim'	--Toggle terminal within nvim
+Plug 'rcarriga/nvim-notify'		-- Notification manager
 Plug 'jiangmiao/auto-pairs'     -- Auto close ({[]})
 Plug 'tpope/vim-commentary'     -- Toggle comentaries on code
-Plug 'vim-airline/vim-airline'  -- Powerline
 Plug 'puremourning/vimspector'	-- Debugging
 Plug 'tpope/vim-fugitive'		-- Git
 Plug 'junegunn/gv.vim'
 Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
-Plug 'norcalli/nvim-colorizer.lua'
+-- Plug 'norcalli/nvim-colorizer.lja'
 Plug 'alvan/vim-closetag' -- Auto close tags
 
 -- Initialize plugin system

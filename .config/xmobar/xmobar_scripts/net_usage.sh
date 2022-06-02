@@ -60,8 +60,8 @@ elif [ "$DELTA_TX_KB" -gt "$LOW" ]; then
 	TX_COLOR=$GREEN
 fi
 
-RX_TEXT=$(printf "<fc=$RX_COLOR,#87CEEB><fn=1></fn> %s kB/s</fc>" "$DELTA_RX_KB")
-TX_TEXT=$(printf "<fc=$TX_COLOR,#87CEEB><fn=1></fn> %s kB/s</fc>" "$DELTA_TX_KB")
+RX_TEXT=$(printf "<fc=$RX_COLOR,#87CEEB><fn=2>  </fn> %s kB/s</fc>" "$DELTA_RX_KB")
+TX_TEXT=$(printf "<fc=$TX_COLOR,#87CEEB><fn=2>  </fn> %s kB/s</fc>" "$DELTA_TX_KB")
 # RX_TEXT=$(printf "▼ %s KiB" "$DELTA_RX_KB")
 # TX_TEXT=$(printf "▲ %s KiB" "$DELTA_TX_KB")
 

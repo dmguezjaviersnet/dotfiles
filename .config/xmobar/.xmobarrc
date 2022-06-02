@@ -66,7 +66,7 @@ Config { font = "xft:Iosevka:weight=bold:pixelsize=14:antialias=true:hinting=tru
 						, Run StdinReader
 
 						-- Date and Time
-						, Run Date "<fn=3>\xf073  </fn>%a %b %_d, %H:%M" "date" 50
+						, Run Date "<fn=3>\xf073  </fn>%a %b%_d, %H:%M" "date" 50
 
 						-- Battery status
 						, Run Battery [

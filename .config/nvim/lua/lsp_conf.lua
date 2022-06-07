@@ -151,10 +151,12 @@ end
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
 	local opts = { on_attach = on_attach }
+
 	if server.name == "sumneko_lua" then
 		local sumneko_opts = require('user.lsp.settings.sumneko_lua')
 		opts = vim.tbl_deep_extend('force', sumneko_opts, opts)
 	end
+
 	if server.name == "html" then
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 		opts.settings = {

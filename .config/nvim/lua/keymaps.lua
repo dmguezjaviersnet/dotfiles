@@ -10,6 +10,9 @@ local function imap(shortcut, command)
 		map('i', shortcut, command)
 end
 
+-- //\\// Syntax Highlighting exceptional //\\//
+nmap("<leader>he", ":TSEnable highlight<CR>")
+
 -- //\\// Browsing and Searching inside a file//\\//
 nmap("n", "nzz")
 nmap("N", "Nzz")

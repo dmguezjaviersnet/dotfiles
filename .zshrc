@@ -14,7 +14,9 @@ source /etc/profile
 export ZSH="$HOME/.oh-my-zsh"
 
 # //\\// -------------------------------- env variables ---------------------------------- //\\//
-
+#
+export GOPATH=$HOME/go:$PATH
+export GOBIN=$GOPATH/bin:$PATH
 export PAGER='less -R'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -27,6 +29,7 @@ export PATH=$HOME/Android/Sdk/platform-tools:$PATH
 export PATH=$HOME/Android/Sdk/tools:$PATH
 export PATH=$HOME/Android/ndk-build:$PATH
 export PATH=$HOME/my_apps/flutter/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 # export PATH=$HOME/my_apps/flutter/bin/cache/dart-sdk/bin:$PATH
 export JAVA_HOME=$HOME/my_apps/android-studio/jre
 

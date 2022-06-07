@@ -4,7 +4,7 @@ if not status_ok then
   return
 end
 
-null_ls.setup ({
+require('null-ls').setup ({
   default_timeout = 20000,
   fallback_severity = vim.diagnostic.severity.INFO,
   sources = {

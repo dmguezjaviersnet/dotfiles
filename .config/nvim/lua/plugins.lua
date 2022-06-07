@@ -51,7 +51,7 @@ Plug "quangnguyen30192/cmp-nvim-ultisnips" --Autocompleter for ultisnips
 Plug 'thomasfaingnaert/vim-lsp-ultisnips' -- LSP snippets integration for SirVer ultisnip
 -- Plug "rafamadriz/friendly-snippets" -- Some snippets
 -- Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
--- Plug 'honza/vim-snippets'		-- Some snippets
+Plug 'honza/vim-snippets'		-- Some snippets
 -- Plug 'dense-analysis/ale'		-- Linter
 Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'

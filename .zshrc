@@ -17,12 +17,12 @@ export ZSH="$HOME/.oh-my-zsh"
 #
 export GOPATH=$HOME/go:$PATH
 export GOBIN=$GOPATH/bin:$PATH
-export PAGER='less -R'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export BROWSER="/usr/bin/google-chrome-stable"
 export EDITOR="/usr/bin/nvim"
 export PATH="$HOME/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 export PATH=$HOME/Android/Sdk/platform-tools:$PATH
@@ -35,6 +35,8 @@ export JAVA_HOME=$HOME/my_apps/android-studio/jre
 
 # //\\// ------------------------------- nnn config ------------------------------------- //\\//
 
+export PAGER='less -R'
+export ICONLOOKUP=1
 export NNN_COPIER=$HOME/bin/nnn_copier 
 # Context FG colors
 export NNN_COLORS='#75757575'
@@ -133,6 +135,7 @@ plugins=(
 	zsh-syntax-highlighting
 	web-search
 	zsh-autosuggestions
+	sudo
 )
 
 # source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -163,6 +166,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="exa"
 alias nv="nvim"
 alias redmi_10_hotspot="netctl start my_redmi10_profile"
 alias random_nightcore="mpv --shuffle  --playlist=/home/nogard/.config/cmus/playlists/pure_nightcore"

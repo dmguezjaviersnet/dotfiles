@@ -37,17 +37,17 @@ Config { font = "xft:Iosevka:weight=bold:pixelsize=14:antialias=true:hinting=tru
 						--, Run Network "wlp5s0" ["-t","<fc=#00FF00><fn=1>\xf1eb</fn></fc>  <fn=1>\xf433</fn>  <rx>kB/s  <fn=1>\xf431</fn>  <tx>kB/s"] 20
 
 						-- Network connection
-						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/net_usage.sh" ["#2B2B2B"] "net_usage" 10
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/net_usage.sh" ["#87CEEB"] "net_usage" 10
 
 						-- Cpu Usage percentage
 						--, Run Cpu ["-L","3","-H","50", "--normal","green","--high","red", "-t", "<total>%"] 10
-						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/cpu_usage.sh" ["#2B2B2B", "#87CEEB", "#006400", "#d3e342", "#de3535"] "cpu_usage" 10
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/cpu_usage.sh" ["#87CEEB", "#2B2B2B", "#32CD32", "#d3e342", "#de3535"] "cpu_usage" 10
 
 						-- Memory (RAM) usage in percentage
 						--, Run Memory ["-t","<fc=#2B2B2B,#87CEEB><fn=5>\xf85a</fn></fc><fc=#2B2B2B,#87CEEB> <usedratio>%</fc>"] 10
 						
 						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/mem_usage.sh" 
-						["#87CEEB", "#2B2B2B", "#32CD32", "#d3e342", "#de3535"] "mem_usage" 10
+						["#2B2B2B", "#87CEEB", "#006400", "#d3e342", "#de3535"] "mem_usage" 10
 
 						-- Disks Status
 						, Run DiskU [("/", "<free> -"), ("/run/media/nogard/2TBBarracuda", "<free>")] [] 60
@@ -60,13 +60,13 @@ Config { font = "xft:Iosevka:weight=bold:pixelsize=14:antialias=true:hinting=tru
 
 						-- Pacman updates
 						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/pack_update.sh"
-						["#87CEEB", "#2B2B2B", "", "", ""] "pack_update" 36000
+						["#2B2B2B", "#87CEEB", "", "", ""] "pack_update" 36000
 
 						-- Workspaces
 						, Run StdinReader
-
+						
 						-- Date and Time
-						, Run Date "<fn=3>\xf073  </fn>%a %b%_d, %H:%M" "date" 50
+						, Run Date "<fn=3>\xf073  </fn>%a %b %_d, %H:%M" "date" 50
 
 						-- Battery status
 						, Run Battery [
@@ -78,27 +78,24 @@ Config { font = "xft:Iosevka:weight=bold:pixelsize=14:antialias=true:hinting=tru
 							"-h", "#006400",
 							"-l", "#DC143C"
 						] 10
+						, Run Com "/home/nogard/.config/xmobar/xmobar_scripts/volumen.sh" ["#87CEEB", "#2B2B2B"] "volume" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%cpu_usage%\
-					\<fc=#87CEEB,#2B2B2B><fn=5> </fn></fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
 					\%mem_usage%\
-					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
-					\%net_usage%\
 					\<fc=#87CEEB,#2B2B2B><fn=5> </fn></fc>\
-					\<fc=#87CEEB,#2B2B2B><fn=4>  </fn></fc><fc=#87CEEB,#2B2B2B><fn=2></fn></fc>\
-					\%pack_update%\
+					\%net_usage%\
 					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
-					\<fc=#2B2B2B,#87CEEB><fn=6> </fn></fc><fc=#2B2B2B,#87CEEB>%disku% </fc>\
+					\<fc=#2B2B2B,#87CEEB><fn=4>  </fn></fc><fc=#87CEEB,#2B2B2B><fn=2></fn></fc>\
+					\%pack_update%\
 					\<fc=#87CEEB,#2B2B2B><fn=5> </fn></fc>\
 					\%StdinReader% }\
-                    \{ <fc=#87CEEB><fn=5> </fn></fc>\
+                    \{ %volume%<fc=#87CEEB><fn=5> </fn></fc>\
 					\<fc=#2B2B2B,#87CEEB>%date%</fc>\
 					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
 					\ %MUHA%\
 					\<fc=#87CEEB><fn=5> </fn></fc>\
-					\<fc=#2B2B2B,#87CEEB>%battery%</fc>\
-					\<fc=#2B2B2B,#87CEEB><fn=5> </fn></fc>\
-					\<fc=#00FFFF><fn=4> </fn></fc> %uname%"
+					\<fc=#2B2B2B,#87CEEB>%battery% </fc>"
        }

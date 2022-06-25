@@ -279,6 +279,8 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
 	spawnOnce "~/.fehbg"
+	-- spawnOnce "us-connect"
+	spawnOnce "conky -c ~/.config/conky/conky_minimalist3/conky.conf"
 	spawnOnce "picom --experimental-backends &"
 
 ------------------------------------------------------------------------

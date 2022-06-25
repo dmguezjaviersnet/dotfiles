@@ -1,10 +1,12 @@
 require("plugins")
 require("settings")
+require("colors")
 require("keymaps")
 require("plugins_conf")
-require('treesitter')
+-- require('treesitter') waiting for json fix
 require('indents')
 require("lsp_conf")
 require("autocompleter")
 require("nvim_tree")
 require('lua_line')
+require('null_ls')

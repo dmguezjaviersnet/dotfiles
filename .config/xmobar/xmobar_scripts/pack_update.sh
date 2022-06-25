@@ -1,12 +1,12 @@
 #! /bin/bash
 
-PASSWORD="$(echo 'U2FsdGVkX18fOD3/b04P6JXd2SkCBKxp+IEmGPJWqHY=' | openssl enc -aes-256-cbc -md sha512 -a -d -pbkdf2 -iter 100000 -salt -pass pass:'dina2019')"
+PASSWORD="$(echo 'U2FsdGVkX1/IMmZqpQZC05wpGjWJOVBhDP2d+GXpEcI=' | openssl enc -aes-256-cbc -md sha512 -a -d -pbkdf2 -iter 100000 -salt -pass pass:'dina2019')"
 UPGRADE_LIST="$(echo ${PASSWORD} | sudo -S pacman -Syup | wc -l)"
 BACK_PID=$!
 wait $BACK_PID
 
-FG='#2B2B2B'
-BG="#87CEEB"
+FG='#87CEEB'
+BG='#2B2B2B'
 GREEN='#00FF00'
 YELLOW='#FFFF00'
 RED='#FF0000'

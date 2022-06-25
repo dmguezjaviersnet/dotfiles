@@ -31,8 +31,8 @@ DELTA_TX="$(((CURRENT_TX-PREV_TX)))"
 DELTA_RX_KB="$((DELTA_RX/1024))"
 DELTA_TX_KB="$((DELTA_TX/1024))"
 
-LIGHT_GRAY="#696969"
-GREEN="#006400"
+LIGHT_GRAY="#87CEEB"
+GREEN="#32CD32"
 YELLOW="#DAA520"
 RED="#DC143C"
 GLYPH_COLOR=""
@@ -60,8 +60,8 @@ elif [ "$DELTA_TX_KB" -gt "$LOW" ]; then
 	TX_COLOR=$GREEN
 fi
 
-RX_TEXT=$(printf "<fc=$RX_COLOR,#87CEEB><fn=2>  </fn> %s kB/s</fc>" "$DELTA_RX_KB")
-TX_TEXT=$(printf "<fc=$TX_COLOR,#87CEEB><fn=2>  </fn> %s kB/s</fc>" "$DELTA_TX_KB")
+RX_TEXT=$(printf "<fc=$RX_COLOR,#2B2B2B><fn=2>  </fn> %s kB/s</fc>" "$DELTA_RX_KB")
+TX_TEXT=$(printf "<fc=$TX_COLOR,#2B2B2B><fn=2>  </fn> %s kB/s</fc>" "$DELTA_TX_KB")
 # RX_TEXT=$(printf "▼ %s KiB" "$DELTA_RX_KB")
 # TX_TEXT=$(printf "▲ %s KiB" "$DELTA_TX_KB")
 
@@ -72,4 +72,4 @@ if [ ! -z "$IP_ADDR" ]; then
 fi
 
 echo "$CURRENT_RX $CURRENT_TX" > "$LOG_FILE"
-echo "<fn=4><fc=$GLYPH_COLOR,#87CEEB>  </fc></fn><fc=,#87CEEB>$RX_TEXT $TX_TEXT</fc><fc=#2B2B2B,#87CEEB> -$IP_ADDR</fc>"
+echo "<fn=4><fc=$GLYPH_COLOR,#2B2B2B>  </fc></fn><fc=,#2B2B2B>$RX_TEXT $TX_TEXT</fc><fc=#87CEEB,#2B2B2B> -$IP_ADDR</fc>"

@@ -1,3 +1,4 @@
+local cmd = vim.cmd
 vim.opt.compatible = false
 vim.opt.colorcolumn = "87"
 vim.opt.relativenumber = true
@@ -23,10 +24,11 @@ vim.g.airline_powerline_fonts = 1
 -- filetype off
 -- filetype plugin indent on
 
-vim.cmd [[
+cmd [[
 		hi SignColumn guibg=none
 		hi LineNr guibg=none
 		highlight ColorColumn ctermbg=7 
-		hi DiagnosticHint  guifg=#B5BD68
+		hi DiagnosticHint guifg=#B5BD68
+		set laststatus=3
 ]]
 

@@ -76,6 +76,7 @@ Plug 'puremourning/vimspector'	-- Debugging
 Plug 'tpope/vim-fugitive'		-- Git
 Plug 'junegunn/gv.vim'
 Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
+Plug "kylechui/nvim-surround"   -- Surround tool
 -- Plug 'norcalli/nvim-colorizer.lja'
 Plug 'alvan/vim-closetag' -- Auto close tags
 

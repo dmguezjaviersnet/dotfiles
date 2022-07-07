@@ -26,7 +26,7 @@ require("trouble").setup {}
 -- cmd [[ highlight ALEWarningSign ctermbg=none ]]
 -- cmd [[ let g:ale_pattern_options = { '.*tests/.*' : { 'ale_enabled' : 0 } } ]]
 
--- Vimtex
+-- Vimtex Run and Stop
 cmd [[ autocmd FileType tex map <F5> :call vimtex#compiler#start()<CR> ]]
 cmd [[ autocmd FileType tex map <F6> :call vimtex#compiler#stop()<CR> ]]
 
@@ -42,9 +42,6 @@ vim.g.vim_markdown_follow_anchor = 1
 cmd [[ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown ]]
 cmd [[ autocmd FileType markdown set conceallevel=0 ]]
 cmd [[ autocmd FileType markdown :normal zR ]]
-
--- Pyright
-cmd [[autocmd FileType python map <F5> :!python %<CR>]]
 
 -- Autoclose tags
 -- filenames like *.xml, *.html, *.xhtml, ...

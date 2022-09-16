@@ -5,6 +5,9 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug 'nvim-lua/plenary.nvim'
 Plug 'godlygeek/tabular'
 
+-- //\\// Dashboard //\\//
+Plug 'glepnir/dashboard-nvim'
+
 -- //\\// Navegation //\\//
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf'
@@ -78,7 +81,8 @@ Plug 'junegunn/gv.vim'
 Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
 Plug "kylechui/nvim-surround"   -- Surround tool
 -- Plug 'norcalli/nvim-colorizer.lja'
-Plug 'alvan/vim-closetag' -- Auto close tags
+-- Plug 'alvan/vim-closetag'    -- Auto close tags (vim)
+Plug 'windwp/nvim-ts-autotag' -- Auto close tags (nvim)
 
 -- Initialize plugin system
 vim.call('plug#end')

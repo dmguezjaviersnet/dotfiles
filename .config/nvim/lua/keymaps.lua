@@ -24,7 +24,7 @@ nmap("*", ":set hlsearch<CR>*")
 imap("<C-Space>", "<C-X><C-O>")
 
 -- //\\// File management //\\//
-nmap("<leader>e", ":NvimTreeToggle<CR>")
+nmap("<leader>fe", ":NvimTreeToggle<CR>")
 
 -- nmap("J", "7j")
 -- nmap("K", "7k")
@@ -77,8 +77,10 @@ nmap("<leader>xx", "<cmd>TroubleToggle<cr>")
 nmap("<leader>ff", ":FZF<CR>")
 
 -- //\\// Toggle Toggle Telescope//\\//
-nmap("<leader>fg", ":Telescope live_grep<CR>")
+nmap("<leader>fw", ":Telescope live_grep<CR>")
 nmap("<leader>fb", ":Telescope buffers<CR>")
+nmap("<leader>fr", ":Telescope oldfiles<CR>")
 nmap("<leader>fh", ":Telescope help_tags<CR>")
 nmap("<leader>gb", ":Telescope git_branches<CR>")
 nmap("<leader>fc", ":Telescope flutter commands<CR>")
+nmap("<leader>cs", ":Telescope colorscheme<CR>")

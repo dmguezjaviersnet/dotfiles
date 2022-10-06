@@ -32,6 +32,9 @@ export PATH=$HOME/my_apps/flutter/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 # export PATH=$HOME/my_apps/flutter/bin/cache/dart-sdk/bin:$PATH
 export JAVA_HOME=$HOME/my_apps/android-studio/jre
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # //\\// ------------------------------- nnn config ------------------------------------- //\\//
 
@@ -177,3 +180,4 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# clear

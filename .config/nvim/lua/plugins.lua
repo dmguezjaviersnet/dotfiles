@@ -19,6 +19,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'doums/darcula'
 Plug 'folke/tokyonight.nvim'
+Plug 'Everblush/everblush.nvim'
 -- Plug 'briones-gabriel/darcula-solid.nvim'
 -- Plug 'rktjmp/lush.nvim'
 Plug 'rebelot/kanagawa.nvim'
@@ -64,15 +65,21 @@ Plug 'honza/vim-snippets'		-- Some snippets
 Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
--- //\\// Dart flutter //\\//
+-- //\\// Dart/flutter //\\//
 -- Plug 'dart-lang/dart-vim-plugin'
 -- Plug 'thosakwe/vim-flutter'
 Plug 'akinsho/flutter-tools.nvim'
 -- Plug 'natebosch/vim-lsc'
 -- Plug 'natebosch/vim-lsc-dart'
 
+-- //\\// Terminal within neovim //\\//
+Plug 'voldikss/vim-floaterm'
+-- Plug 'akinsho/toggleterm.nvim'	--Toggle terminal within nvim
+
+-- //\\// Session Managers //\\//
+Plug 'jedrzejboczar/possession.nvim'
+
 -- //\\// Utils //\\//
-Plug 'akinsho/toggleterm.nvim'	--Toggle terminal within nvim
 Plug 'rcarriga/nvim-notify'		-- Notification manager
 Plug 'jiangmiao/auto-pairs'     -- Auto close ({[]})
 Plug 'tpope/vim-commentary'     -- Toggle comentaries on code

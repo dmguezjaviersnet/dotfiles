@@ -37,7 +37,7 @@ nmap("--", ":sp<CR>")
 nmap("<leader>ts", ":TSEnable highlight<CR>")
 
 -- //\\// Toggle Terminal //\\//
-nmap("<leader>te", "<cmd>terminal<CR>")
+-- nmap("<leader>te", "<cmd>terminal<CR>")
 
 -- nmap("<leader>rc", ":e ~/.config/nvim/init.vim<CR>")
 -- nmap("<leader>rl", ":so ~/.config/nvim/init.lua<CR>")
@@ -73,14 +73,15 @@ nmap("<leader>gG", ":GV --all<CR>")
 -- //\\// Toggle TroubleToggle//\\//
 nmap("<leader>xx", "<cmd>TroubleToggle<cr>")
 
--- //\\// Toggle FuzzyFinder for cwd//\\//
+-- //\\// Toggle FuzzyFinder for cwd //\\//
 nmap("<leader>ff", ":FZF<CR>")
 
--- //\\// Toggle Toggle Telescope//\\//
+-- //\\// Toggle Telescope//\\//
 nmap("<leader>fw", ":Telescope live_grep<CR>")
 nmap("<leader>fb", ":Telescope buffers<CR>")
 nmap("<leader>fr", ":Telescope oldfiles<CR>")
 nmap("<leader>fh", ":Telescope help_tags<CR>")
 nmap("<leader>gb", ":Telescope git_branches<CR>")
 nmap("<leader>fc", ":Telescope flutter commands<CR>")
+nmap("<leader>ls", ":Telescope possession list<CR>")
 nmap("<leader>cs", ":Telescope colorscheme<CR>")

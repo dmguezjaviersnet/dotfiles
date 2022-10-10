@@ -1,4 +1,5 @@
 local status_ok, lualine = pcall(require, 'lualine')
+local session_name = require('tools')
 
 if not status_ok then
   return
@@ -18,7 +19,7 @@ lualine.setup {
 	lualine_a = {'mode'},
 	lualine_b = {'branch', 'diff', 'diagnostics'},
 	lualine_c = {'filename'},
-	lualine_x = {'encoding', 'fileformat', 'filetype'},
+	lualine_x = {session_name, 'encoding', 'fileformat', 'filetype'},
 	lualine_y = {'progress'},
 	lualine_z = {'location'}
   },

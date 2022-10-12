@@ -56,10 +56,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
+-- Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
 Plug "quangnguyen30192/cmp-nvim-ultisnips" --Autocompleter for ultisnips
 Plug 'thomasfaingnaert/vim-lsp-ultisnips' -- LSP snippets integration for SirVer ultisnip
 -- Plug "rafamadriz/friendly-snippets" -- Some snippets
--- Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
 Plug 'honza/vim-snippets'		-- Some snippets
 -- Plug 'dense-analysis/ale'		-- Linter
 Plug 'folke/trouble.nvim'
@@ -78,6 +78,7 @@ Plug 'voldikss/vim-floaterm'
 
 -- //\\// Session Managers //\\//
 Plug 'jedrzejboczar/possession.nvim'
+-- Plug 'tpope/vim-obsession'
 
 -- //\\// Utils //\\//
 Plug 'rcarriga/nvim-notify'		-- Notification manager

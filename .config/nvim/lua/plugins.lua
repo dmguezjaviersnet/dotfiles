@@ -15,6 +15,7 @@ Plug 'ggandor/leap.nvim'
 
 -- //\\// ------------------- Themes and icons --------------------------- //\\//
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'lewis6991/gitsigns.nvim'  -- Git Decorations Lua
 Plug 'EdenEast/nightfox.nvim'
 Plug 'doums/darcula'
 Plug 'folke/tokyonight.nvim'
@@ -36,6 +37,7 @@ Plug 'shaunsingh/moonlight.nvim'
 
 -- //\\// ------------------- Status bar --------------------------- //\\//
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'feline-nvim/feline.nvim'
 -- Plug 'vim-airline/vim-airline'  -- Powerline written in vimscript
 
 -- //\\// ------------------- Syntax highlighting --------------------------- //\\//
@@ -54,11 +56,11 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
--- Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
-Plug "quangnguyen30192/cmp-nvim-ultisnips" --Autocompleter for ultisnips
-Plug 'thomasfaingnaert/vim-lsp-ultisnips' -- LSP snippets integration for SirVer ultisnip
+Plug 'L3MON4D3/LuaSnip'				-- Snippet engine written in Lua
+Plug 'saadparwaiz1/cmp_luasnip'     -- Autocompleter for luasnip engine
 -- Plug "rafamadriz/friendly-snippets" -- Some snippets
+Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
+Plug "quangnguyen30192/cmp-nvim-ultisnips"	-- Autocompleter for ultisnips engine
 Plug 'honza/vim-snippets'		-- Some snippets
 -- Plug 'dense-analysis/ale'		-- Linter
 Plug 'folke/trouble.nvim'

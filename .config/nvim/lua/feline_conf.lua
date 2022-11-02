@@ -5,19 +5,35 @@ if not status_ok then
 	return
 end
 
-local one_monokai = {
+local function file_osinfo()
+    local os = vim.bo.fileformat:upper()
+    local icon
+    if os == 'UNIX' then
+        icon = ' '
+    elseif os == 'MAC' then
+        icon = ' '
+    else
+        icon = ' '
+    end
+    return icon
+end
+
+local tokyonight = {
 	fg = "#AFAFD7",
 	bg = "#262626",
 	green = "#AFDF5F",
+	dark_gray = "#262626",
+	charcoal_gray = "#4E4E4E",
 	yellow = "#D7AF5F",
 	purple = "#AF87FF",
-	orange = "#d19a66",
+	orange = "#D7AF5F",
 	peanut = "#f6d5a4",
 	blue = "#86AFFF",
 	red = "#e06c75",
 	aqua = "#61afef",
 	darkblue = "#282c34",
 	dark_red = "#f75f5f",
+	silver = "#D9D7D6"
 }
 
 local vi_mode_colors = {
@@ -28,7 +44,14 @@ local vi_mode_colors = {
 	LINES = "purple",
 	BLOCK = "purple",
 	REPLACE = "red",
-	COMMAND = "aqua",
+	COMMAND = "orange",
+}
+
+local seps = {
+	left_spaced = " ",
+	right_spaced = " ",
+	right_filled_block = "█",
+	left_filled_block = "█",
 }
 
 local c = {
@@ -43,59 +66,74 @@ local c = {
 		hl = function()
 			return {
 				fg = require("feline.providers.vi_mode").get_mode_color(),
-				bg = "darkblue",
+				bg = "bg",
 				style = "bold",
 				name = "NeovimModeHLColor",
 			}
 		end,
 		left_sep = "block",
-		right_sep = "block",
+		right_sep = {
+			str = "right_filled_block",
+			hl = function()
+				return {
+					fg = "bg",
+					bg = "charcoal_gray",
+					name = "NeovimModeHLColor",
+				}
+			end,
+		},
 	},
 	gitBranch = {
 		provider = "git_branch",
-		hl = {
-			fg = "peanut",
-			bg = "darkblue",
-			style = "bold",
-		},
+		hl = function()
+			return {
+				fg = require("feline.providers.vi_mode").get_mode_color(),
+				bg = "charcoal_gray",
+				style = "bold",
+				name = "NeovimModeHLColor",
+			}
+		end,
 		left_sep = "block",
-		right_sep = "block",
+		right_sep = {
+			str = "right_filled_block",
+			hl = {
+				fg = "charcoal_gray",
+				bg = "bg",
+			}
+		},
 	},
 	gitDiffAdded = {
 		provider = "git_diff_added",
 		hl = {
 			fg = "green",
-			bg = "darkblue",
+			bg = "bg",
 		},
-		left_sep = "block",
-		right_sep = "block",
+		left_sep = "",
+		right_sep = "",
 	},
 	gitDiffRemoved = {
 		provider = "git_diff_removed",
 		hl = {
 			fg = "red",
-			bg = "darkblue",
+			bg = "bg",
 		},
-		left_sep = "block",
-		right_sep = "block",
+		left_sep = "",
+		right_sep = "",
 	},
 	gitDiffChanged = {
 		provider = "git_diff_changed",
 		hl = {
 			fg = "fg",
-			bg = "darkblue",
+			bg = "bg",
 		},
-		left_sep = "block",
+		left_sep = "",
 		right_sep = "right_filled",
-	},
-	separator = {
-		provider = "",
 	},
 	fileinfo = {
 		provider = {
 			name = "file_info",
 			opts = {
-				type = "relative-short",
+				type = "base-only",
 			},
 		},
 		hl = {
@@ -128,66 +166,131 @@ local c = {
 	lsp_client_names = {
 		provider = "lsp_client_names",
 		hl = {
-			fg = "purple",
-			bg = "darkblue",
+			fg = "silver",
+			bg = "charcoal_gray",
 			style = "bold",
 		},
-		left_sep = "left_filled",
-		right_sep = "block",
+		left_sep = {
+			str = "left_filled_block",
+			hl = function()
+				return {
+					fg = "charcoal_gray",
+					bg = "bg",
+					name = "NeovimModeHLColor",
+				}
+			end,
+		},
+		right_sep = {
+			str = "right_filled_block",
+			hl = function()
+				return {
+					fg = "charcoal_gray",
+					bg = "bg",
+					name = "NeovimModeHLColor",
+				}
+			end,
+		},
 	},
 	file_type = {
 		provider = {
 			name = "file_type",
 			opts = {
-				filetype_icon = true,
 				case = "titlecase",
 			},
 		},
 		hl = {
-			fg = "red",
-			bg = "darkblue",
+			fg = "fg",
+			bg = "bg",
 			style = "bold",
 		},
-		left_sep = "block",
+		left_sep = {
+			str = seps.left_spaced,
+			hl = {
+				fg = "fg"
+			}
+		},
 		right_sep = "block",
 	},
 	file_encoding = {
 		provider = "file_encoding",
 		hl = {
-			fg = "orange",
-			bg = "darkblue",
-			style = "italic",
+			fg = "fg",
+			bg = "bg",
+			style = "italic"
 		},
-		left_sep = "block",
+
+		left_sep = {
+			str = seps.left_spaced,
+			hl = {
+				fg = "fg"
+			}
+		},
 		right_sep = "block",
+	},
+	file_format = {
+		provider = file_osinfo,
+		hl = function()
+			return {
+				fg = require("feline.providers.vi_mode").get_mode_color(),
+				bg = "bg",
+				name = "NeovimModeHLColor",
+			}
+		end,
+		left_sep = {
+			str = seps.left_spaced,
+			hl = {
+				fg = "fg"
+			}
+		},
+		right_sep = "",
 	},
 	position = {
 		provider = "position",
-		hl = {
-			fg = "green",
-			bg = "darkblue",
-			style = "bold",
+		hl = function()
+			return {
+				fg = "dark_gray",
+				bg = require("feline.providers.vi_mode").get_mode_color(),
+				style = "bold",
+				name = "NeovimModeHLColor",
+			}
+		end,
+		left_sep = {
+			str = seps.left_filled_block,
+			hl = function()
+				return {
+					fg = require("feline.providers.vi_mode").get_mode_color(),
+					bg = "charcoal_gray",
+					name = "NeovimModeHLColor",
+				}
+			end,
 		},
-		left_sep = "block",
 		right_sep = "block",
 	},
 	line_percentage = {
 		provider = "line_percentage",
-		hl = {
-			fg = "aqua",
-			bg = "darkblue",
-			style = "bold",
+		hl = function()
+			return {
+				fg = require("feline.providers.vi_mode").get_mode_color(),
+				bg ="charcoal_gray",
+				style = "bold",
+				name = "NeovimModeHLColor",
+			}
+		end,
+		left_sep = {
+			str = seps.left_filled_block,
+			hl = {
+				fg = "charcoal_gray"
+			}
 		},
-		left_sep = "block",
 		right_sep = "block",
 	},
-	scroll_bar = {
-		provider = "scroll_bar",
-		hl = {
-			fg = "yellow",
-			style = "bold",
-		},
-	},
+	-- scroll_bar = {
+	-- 	provider = "scroll_bar",
+	-- 	hl = {
+	-- 		fg = "yellow",
+	-- 		style = "bold",
+	-- 	},
+	-- },
 }
 
 local left = {
@@ -196,11 +299,11 @@ local left = {
 	c.gitDiffAdded,
 	c.gitDiffRemoved,
 	c.gitDiffChanged,
-	c.separator,
+	c.fileinfo,
 }
 
 local middle = {
-	c.fileinfo,
+	-- c.lsp_client_names,
 	c.diagnostic_errors,
 	c.diagnostic_warnings,
 	c.diagnostic_info,
@@ -208,12 +311,11 @@ local middle = {
 }
 
 local right = {
-	c.lsp_client_names,
 	c.file_type,
 	c.file_encoding,
-	c.position,
+	c.file_format,
 	c.line_percentage,
-	c.scroll_bar,
+	c.position,
 }
 
 local components = {
@@ -231,6 +333,7 @@ local components = {
 
 feline.setup({
 	components = components,
-	theme = one_monokai,
+	theme = tokyonight,
 	vi_mode_colors = vi_mode_colors,
+	separators = seps
 })

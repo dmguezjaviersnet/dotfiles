@@ -1,9 +1,12 @@
 -- local session_name = require('tools')
 
 local status_ok, feline = pcall(require, "feline")
+
 if not status_ok then
 	return
 end
+
+local session_name = require('tools')
 
 local function file_osinfo()
     local os = vim.bo.fileformat:upper()
@@ -218,6 +221,15 @@ local c = {
 			end,
 		},
 	},
+  possession_session = {
+	  provider = session_name,
+	  hl = {
+		  fg = "fg",
+		  bg = "bg",
+		  style = "italic"
+	  },
+	  right_sep = "block",
+  },
 	file_type = {
 		provider = {
 			name = "file_type",
@@ -338,9 +350,10 @@ local middle = {
 }
 
 local right = {
-	c.file_type,
+	c.possession_session,
 	c.file_encoding,
 	c.file_format,
+	c.file_type,
 	c.line_percentage,
 	c.position,
 }

@@ -90,7 +90,7 @@ local c = {
 		provider = "git_branch",
 		hl = function()
 			return {
-				fg = "blue",
+				fg = "peanut",
 				bg = "bg",
 				style = "bold",
 				name = "NeovimModeHLColor",
@@ -101,7 +101,7 @@ local c = {
 			str = "right_filled_spaced",
 			hl = function()
 				return {
-					fg = "blue",
+					fg = "charcoal_gray",
 					bg = "bg",
 					style = "bold",
 					name = "NeovimModeHLColor",

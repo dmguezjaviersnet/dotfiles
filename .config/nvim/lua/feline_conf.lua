@@ -51,7 +51,11 @@ local seps = {
 	left_spaced = " ",
 	right_spaced = " ",
 	right_filled_block = "█",
+	right_filled_spaced = " ",
 	left_filled_block = "█",
+	block_spaced = "█ ",
+	slant_left_spaced = " ",
+	slant_right_upsdown = "█ ",
 }
 
 local c = {
@@ -71,35 +75,38 @@ local c = {
 				name = "NeovimModeHLColor",
 			}
 		end,
-		left_sep = "block",
-		right_sep = {
-			str = "right_filled_block",
+		left_sep = {
+			str = "block_spaced",
 			hl = function()
 				return {
-					fg = "bg",
-					bg = "charcoal_gray",
+					fg = require("feline.providers.vi_mode").get_mode_color(),
 					name = "NeovimModeHLColor",
 				}
 			end,
 		},
+		right_sep = " ",
 	},
 	gitBranch = {
 		provider = "git_branch",
 		hl = function()
 			return {
-				fg = require("feline.providers.vi_mode").get_mode_color(),
-				bg = "charcoal_gray",
+				fg = "blue",
+				bg = "bg",
 				style = "bold",
 				name = "NeovimModeHLColor",
 			}
 		end,
 		left_sep = "block",
 		right_sep = {
-			str = "right_filled_block",
-			hl = {
-				fg = "charcoal_gray",
-				bg = "bg",
-			}
+			str = "right_filled_spaced",
+			hl = function()
+				return {
+					fg = "blue",
+					bg = "bg",
+					style = "bold",
+					name = "NeovimModeHLColor",
+				}
+			end,
 		},
 	},
 	gitDiffAdded = {
@@ -133,14 +140,34 @@ local c = {
 		provider = {
 			name = "file_info",
 			opts = {
+				file_modified_icon = "",
 				type = "base-only",
 			},
 		},
 		hl = {
+			bg = "charcoal_gray",
+			fg = "fg",
 			style = "bold",
 		},
-		left_sep = " ",
-		right_sep = " ",
+
+		left_sep = {
+			str = "slant_left_spaced",
+			hl = {
+				fg = "charcoal_gray",
+				bg = "bg",
+				name = "NeovimModeHLColor",
+			},
+		},
+		right_sep = {
+			str = "slant_right_upsdown",
+			hl = function()
+				return {
+					fg = "charcoal_gray",
+					bg = "bg",
+					name = "NeovimModeHLColor",
+				}
+			end,
+		},
 	},
 	diagnostic_errors = {
 		provider = "diagnostic_errors",
@@ -295,11 +322,11 @@ local c = {
 
 local left = {
 	c.vim_mode,
+	c.fileinfo,
 	c.gitBranch,
 	c.gitDiffAdded,
 	c.gitDiffRemoved,
 	c.gitDiffChanged,
-	c.fileinfo,
 }
 
 local middle = {

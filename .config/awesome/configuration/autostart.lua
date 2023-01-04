@@ -19,6 +19,7 @@ local function autostart_apps()
 	--- Other stuff
 	helpers.run.run_once_grep("blueman-applet")
 	helpers.run.run_once_grep("nm-applet")
+	awful.spawn("setxkbmap -layout us,us -variant ,altgr-intl -option grp:lalt_toggle")
 end
 
 autostart_apps()

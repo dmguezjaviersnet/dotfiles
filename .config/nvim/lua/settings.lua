@@ -1,5 +1,4 @@
 local cmd = vim.cmd
-vim.opt.compatible = false
 vim.opt.colorcolumn = "87"
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
@@ -19,6 +18,8 @@ vim.opt.foldenable = false
 vim.opt.mouse = "a"
 vim.opt.syntax = "on"
 vim.opt.background = "dark"
+-- vim.opt.ls = 0
+-- vim.opt.ch = 0
 vim.g.mapleader = " "
 vim.g.airline_powerline_fonts = 1
 -- filetype off
@@ -31,4 +32,3 @@ cmd [[
 		hi DiagnosticHint guifg=#B5BD68
 		set laststatus=3
 ]]
-

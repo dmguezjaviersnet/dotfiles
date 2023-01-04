@@ -54,14 +54,15 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'				-- Snippet engine written in Lua
 Plug 'saadparwaiz1/cmp_luasnip'     -- Autocompleter for luasnip engine
--- Plug "rafamadriz/friendly-snippets" -- Some snippets
-Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
-Plug "quangnguyen30192/cmp-nvim-ultisnips"	-- Autocompleter for ultisnips engine
-Plug 'honza/vim-snippets'		-- Some snippets
+Plug "rafamadriz/friendly-snippets" -- Some snippets
+-- Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
+-- Plug "quangnguyen30192/cmp-nvim-ultisnips"	-- Autocompleter for ultisnips engine
+-- Plug 'honza/vim-snippets'		-- Some snippets
 -- Plug 'dense-analysis/ale'		-- Linter
 Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'

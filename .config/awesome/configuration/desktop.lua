@@ -9,7 +9,7 @@ local bling = require("modules.bling")
 client.connect_signal("request::manage", function(c)
 	--- Add missing icon to client
 	if not c.icon then
-		local icon = gears.surface(beautiful.theme_assets.awesome_icon(24, beautiful.xcolor8, beautiful.xbackground))
+		local icon = gears.surface(beautiful.theme_assets.awesome_icon(24, beautiful.color8, beautiful.black))
 		c.icon = icon._native
 		icon:finish()
 	end
@@ -56,7 +56,7 @@ end)
 
 --- Flash focus
 --- ~~~~~~~~~~~
-bling.module.flash_focus.enable()
+-- bling.module.flash_focus.enable()
 
 --- Tag preview
 --- ~~~~~~~~~~~

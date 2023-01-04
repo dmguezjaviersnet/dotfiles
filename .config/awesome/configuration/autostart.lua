@@ -17,7 +17,6 @@ local function autostart_apps()
 		"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 	)
 	--- Other stuff
-	helpers.run.run_once_pgrep("setxkbmap -layout us,us -variant ,altgr-intl -option grp:lalt_toggle")
 	helpers.run.run_once_grep("blueman-applet")
 	helpers.run.run_once_grep("nm-applet")
 end

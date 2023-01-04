@@ -2,7 +2,6 @@ local awful = require("awful")
 local beautiful = require("beautiful")
 local ruled = require("ruled")
 local helpers = require("helpers")
-local dpi = beautiful.xresources.apply_dpi
 
 --- Get screen geometry
 local screen_width = awful.screen.focused().geometry.width
@@ -21,6 +20,7 @@ ruled.client.connect_signal("request::rules", function()
 			-- screen = awful.screen.preferred,
 			screen = awful.screen.focused,
 			focus = awful.client.focus.filter,
+			-- titlebars_enabled = beautiful.titlebar_enabled,
 			titlebars_enabled = false,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 		},
@@ -45,7 +45,7 @@ ruled.client.connect_signal("request::rules", function()
 			},
 		},
 		properties = {
-			titlebars_enabled = false,
+			titlebars_enabled = false
 		},
 	})
 

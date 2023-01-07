@@ -11,7 +11,7 @@ db.default_banner = {
 ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 '',
-'                                   v0.7.2                                       ',
+'                                   v0.8.2                                       ',
 '',
 'An open-source text editor currently in development and aiming for the future ;)',
 }

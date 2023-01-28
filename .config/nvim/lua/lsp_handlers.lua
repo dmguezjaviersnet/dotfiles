@@ -1,3 +1,7 @@
+local M = {}
+
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+
 local function lsp_keymaps(bufnr)
 	-- Mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -51,4 +55,12 @@ local on_attach = function(client, bufnr)
 	highlight_string(client)
 end
 
-return on_attach
+M.on_attach = on_attach
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
+M.capabilities = capabilities
+
+
+return M

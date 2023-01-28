@@ -1,12 +1,9 @@
-local on_attach = require("lsp_keymaps")
+local M = require("lsp_handlers")
 
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
 	return
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 -- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -20,8 +17,8 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
 	local opts = {
-		on_attach = on_attach,
-		capabilities = capabilities
+		on_attach = M.on_attach,
+		capabilities = M.capabilities
 	}
 
 	if server.name == "jsonls" then
@@ -30,12 +27,12 @@ lsp_installer.on_server_ready(function(server)
 	end
 
 	if server.name == "sumneko_lua" then
-		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
+		local sumneko_opts = require("user.lsp.settings.sumneko_lua_conf")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
 
 	if server.name == "html" then
-		capabilities.textDocument.completion.completionItem.snippetSupport = true
+		M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 		opts.settings = {
 			configurationSection = { "html", "css", "javascript" },
 			embeddedLanguages = {
@@ -43,7 +40,7 @@ lsp_installer.on_server_ready(function(server)
 				javascript = true
 			},
 			provideFormatter = true,
-			capabilities = capabilities
+			capabilities = M.capabilities
 		}
 	end
 

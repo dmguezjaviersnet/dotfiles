@@ -1,4 +1,4 @@
-local on_attach = require("lsp_keymaps")
+local on_attach = require("lsp_handlers")
 
 local status_ok, flutter_tools = pcall(require, "flutter-tools")
 

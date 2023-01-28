@@ -9,16 +9,16 @@ end
 local session_name = require('tools')
 
 local function file_osinfo()
-    local os = vim.bo.fileformat:upper()
-    local icon
-    if os == 'UNIX' then
-        icon = ' '
-    elseif os == 'MAC' then
-        icon = ' '
-    else
-        icon = ' '
-    end
-    return icon
+	local os = vim.bo.fileformat:upper()
+	local icon
+	if os == 'UNIX' then
+		icon = ' '
+	elseif os == 'MAC' then
+		icon = ' '
+	else
+		icon = ' '
+	end
+	return icon
 end
 
 local tokyonight = {
@@ -221,15 +221,15 @@ local c = {
 			end,
 		},
 	},
-  possession_session = {
-	  provider = session_name,
-	  hl = {
-		  fg = "fg",
-		  bg = "bg",
-		  style = "italic"
-	  },
-	  right_sep = "block",
-  },
+	possession_session = {
+		provider = session_name,
+		hl = {
+			fg = "fg",
+			bg = "bg",
+			style = "italic"
+		},
+		right_sep = "block",
+	},
 	file_type = {
 		provider = {
 			name = "file_type",
@@ -310,7 +310,7 @@ local c = {
 		hl = function()
 			return {
 				fg = require("feline.providers.vi_mode").get_mode_color(),
-				bg ="charcoal_gray",
+				bg = "charcoal_gray",
 				style = "bold",
 				name = "NeovimModeHLColor",
 			}

@@ -1,5 +1,5 @@
 if vim.g.snippets == 'luasnip' then
-  return
+	return
 end
 
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -7,7 +7,7 @@ local ls = pcall(require, 'luasnip')
 local types = pcall(require, 'luasnip.util.types')
 
 if not ls or types then
-  return
+	return
 end
 
 -- vim.keymap.set({"i", "s"},  "<c-l>", function ()
@@ -17,7 +17,7 @@ end
 -- end, {silent = true})
 
 ls.config.set_config {
-  history = true,
-  updateevents = "TextChanged, TextChangedI",
-  autosnippets = true,
+	history = true,
+	updateevents = "TextChanged, TextChangedI",
+	autosnippets = true,
 }

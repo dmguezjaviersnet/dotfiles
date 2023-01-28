@@ -5,8 +5,8 @@ cmd [[ autocmd FileType dart setlocal softtabstop=2 ]]
 cmd [[ autocmd FileType dart setlocal shiftwidth=2 ]]
 
 -- Lua
-cmd [[ autocmd FileType lua setlocal softtabstop=2 ]]
-cmd [[ autocmd FileType lua setlocal shiftwidth=2 ]]
+cmd [[ autocmd FileType lua setlocal softtabstop=4 ]]
+cmd [[ autocmd FileType lua setlocal shiftwidth=4 ]]
 
 -- Python
 cmd [[ autocmd FileType python map <F5> :!python %<CR> ]]

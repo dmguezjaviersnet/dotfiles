@@ -15,7 +15,7 @@ Plug 'ggandor/leap.nvim'
 
 -- //\\// ------------------- Themes and icons --------------------------- //\\//
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lewis6991/gitsigns.nvim'  -- Git Decorations Lua
+Plug 'lewis6991/gitsigns.nvim' -- Git Decorations Lua
 Plug 'EdenEast/nightfox.nvim'
 Plug 'doums/darcula'
 Plug 'folke/tokyonight.nvim'
@@ -36,7 +36,7 @@ Plug 'shaunsingh/moonlight.nvim'
 -- plug 'cocopon/iceberg.vim'
 
 -- //\\// ------------------- Status bar --------------------------- //\\//
-Plug 'nvim-lualine/lualine.nvim'
+-- Plug 'nvim-lualine/lualine.nvim'
 Plug 'feline-nvim/feline.nvim'
 -- Plug 'vim-airline/vim-airline'  -- Powerline written in vimscript
 
@@ -57,8 +57,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'L3MON4D3/LuaSnip'				-- Snippet engine written in Lua
-Plug 'saadparwaiz1/cmp_luasnip'     -- Autocompleter for luasnip engine
+Plug 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
+Plug 'saadparwaiz1/cmp_luasnip' -- Autocompleter for luasnip engine
 Plug "rafamadriz/friendly-snippets" -- Some snippets
 -- Plug 'SirVer/ultisnips'			-- Snippet engine written in vimscript
 -- Plug "quangnguyen30192/cmp-nvim-ultisnips"	-- Autocompleter for ultisnips engine
@@ -84,17 +84,18 @@ Plug 'jedrzejboczar/possession.nvim'
 
 -- //\\// ------------------------------- Utils ------------------------------- //\\//
 Plug 'tjdevries/colorbuddy.vim'
-Plug 'rcarriga/nvim-notify'		-- Notification manager
-Plug 'jiangmiao/auto-pairs'     -- Auto close ({[]})
-Plug 'tpope/vim-commentary'     -- Toggle comentaries on code
-Plug 'puremourning/vimspector'	-- Debugging
-Plug 'tpope/vim-fugitive'		-- Git
-Plug 'junegunn/gv.vim'			-- Git commit browser
-Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
-Plug "kylechui/nvim-surround"   -- Surround tool
-Plug 'nvim-lua/plenary.nvim'    -- Useful lua functions to complement neovim
-Plug 'godlygeek/tabular'        -- Filter and align text
-Plug 'windwp/nvim-ts-autotag'   -- Auto close tags (nvim)
+Plug 'rcarriga/nvim-notify' -- Notification manager
+Plug 'windwp/nvim-autopairs' -- Autopairs written in lua
+-- Plug 'jiangmiao/auto-pairs' -- Autopairs
+Plug 'tpope/vim-commentary' -- Toggle comentaries on code
+Plug 'puremourning/vimspector' -- Debugging
+Plug 'tpope/vim-fugitive' -- Git
+Plug 'junegunn/gv.vim' -- Git commit browser
+Plug 'szw/vim-maximizer' -- Maximize a buffer temporarly (util for vimspector)
+Plug "kylechui/nvim-surround" -- Surround tool
+Plug 'nvim-lua/plenary.nvim' -- Useful lua functions to complement neovim
+Plug 'godlygeek/tabular' -- Filter and align text
+Plug 'windwp/nvim-ts-autotag' -- Auto close tags (nvim)
 -- Plug 'alvan/vim-closetag'    -- Auto close tags (vim)
 -- Plug 'norcalli/nvim-colorizer.lja'
 

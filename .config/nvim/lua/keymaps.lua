@@ -43,8 +43,11 @@ nmap("<leader>ts", ":TSEnable highlight<CR>")
 -- nmap("<leader>rl", ":so ~/.config/nvim/init.lua<CR>")
 
 -- //\\// Plugins management //\\//
+nmap("<leader>mi", ":Mason<CR>")
+
+-- //\\// Plugins management //\\//
 nmap("<leader>pi", ":PackerInstall<CR>")
-nmap("<leader>pu", ":PackerUpdate<CR>")
+nmap("<leader>ps", ":PackerSync<CR>")
 nmap("<leader>pc", ":PackerClean<CR>")
 
 nmap("<C-S>", ":update<CR>")

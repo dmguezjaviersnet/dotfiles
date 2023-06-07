@@ -63,23 +63,20 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
-				vim_item.kind = string.format("%s", lspkind.presets.default[vim_item.kind])
-				vim_item.menu = ({
-					buffer = "[buf]",
-					nvim_lsp = "[LSP]",
-					nvim_lua = "[API]",
-					path = "[path]",
-					luasnip = "[snip]",
-					-- gh_issues = "[issues]",
-				})[entry.source.name]
-				return vim_item
-			end
+			vim_item.kind = string.format("%s", lspkind.presets.default[vim_item.kind])
+			vim_item.menu = ({
+				buffer = "[buf]",
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[API]",
+				path = "[path]",
+				luasnip = "[snip]",
+				-- gh_issues = "[issues]",
+			})[entry.source.name]
+			return vim_item
+		end
 	},
 	experimental = {
 		ghost_text = true,
 		native_menu = false
 	}
 })
---}
---
---

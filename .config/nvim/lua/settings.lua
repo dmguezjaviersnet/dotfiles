@@ -1,4 +1,5 @@
 local cmd = vim.cmd
+
 vim.opt.colorcolumn = "87"
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
@@ -22,13 +23,18 @@ vim.opt.background = "dark"
 -- vim.opt.ch = 0
 vim.g.mapleader = " "
 vim.g.airline_powerline_fonts = 1
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.termguicolors = true
 -- filetype off
 -- filetype plugin indent on
 
 cmd [[
 		hi SignColumn guibg=none
 		hi LineNr guibg=none
-		highlight ColorColumn ctermbg=7 
+		highlight ColorColumn ctermbg=7
 		hi DiagnosticHint guifg=#B5BD68
 		set laststatus=3
 ]]

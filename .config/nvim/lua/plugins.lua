@@ -5,21 +5,22 @@ if not status then
 end
 
 packer.init {
-	ensure_dependencies  = true, -- Should packer install plugin dependencies?
-	preview_updates      = true, -- If true, always preview updates before choosing which plugins to update, same as `PackerUpdate --preview`.
-	display              = {
-		open_fn         = function () 	-- An optional function to open a window for packer's display
+	ensure_dependencies = true, -- Should packer install plugin dependencies?
+	preview_updates     = true, -- If true, always preview updates before choosing which plugins to update, same as `PackerUpdate --preview`.
+	display             = {
+		open_fn       = function() -- An optional function to open a window for packer's display
 			return require('packer.util').float { border = "rounded" }
 		end,
-		working_sym     = '⟳', -- The symbol for a plugin being installed/updated
-		error_sym       = '✗', -- The symbol for a plugin with an error in installation/updating
-		done_sym        = '✓', -- The symbol for a plugin which has completed installation/updating
-		removed_sym     = '-', -- The symbol for an unused plugin which was removed
-		moved_sym       = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
-		header_sym      = '━', -- The symbol for the header line in packer's display
-		show_all_info   = true, -- Should packer show all update details automatically?
-		prompt_border   = 'double', -- Border style of prompt popups.
-		keybindings     = { -- Keybindings for the display window
+		working_sym   = '⟳', -- The symbol for a plugin being installed/updated
+		error_sym     = '✗', -- The symbol for a plugin with an error in installation/updating
+		done_sym      = '✓', -- The symbol for a plugin which has completed installation/updating
+		removed_sym   = '-', -- The symbol for an unused plugin which was removed
+		moved_sym     = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
+		header_sym    = '━', -- The symbol for the header line in packer's display
+		show_all_info = true, -- Should packer show all update details automatically?
+		prompt_border = 'double', -- Border style of prompt popups.
+		keybindings   = {
+			-- Keybindings for the display window
 			quit = 'q',
 			toggle_update = 'u', -- only in preview
 			continue = 'c', -- only in preview
@@ -36,7 +37,16 @@ return packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	-- //\\// ------------------- Dashboard --------------------------- //\\//
-	use 'glepnir/dashboard-nvim'
+	use {
+		'glepnir/dashboard-nvim',
+		event = 'VimEnter',
+		config = function()
+			require('dashboard').setup {
+				-- config
+			}
+		end,
+		requires = { 'nvim-tree/nvim-web-devicons' }
+	}
 
 	-- //\\// ------------------- Navegation --------------------------- //\\//
 	use 'nvim-telescope/telescope.nvim'
@@ -48,14 +58,14 @@ return packer.startup(function(use)
 	-- //\\// ------------------- Themes and icons --------------------------- //\\//
 	use 'kyazdani42/nvim-web-devicons'
 	use 'lewis6991/gitsigns.nvim' -- Git Decorations Lua
-	use 'EdenEast/nightfox.nvim'
-	use 'doums/darcula'
+	-- use 'EdenEast/nightfox.nvim'
+	-- use 'doums/darcula'
 	use 'folke/tokyonight.nvim'
-	use 'Everblush/everblush.nvim'
-	use 'rebelot/kanagawa.nvim'
-	use 'rmehri01/onenord.nvim'
-	use 'Th3Whit3Wolf/onebuddy'
-	use 'shaunsingh/moonlight.nvim'
+	-- use 'Everblush/everblush.nvim'
+	-- use 'rebelot/kanagawa.nvim'
+	-- use 'rmehri01/onenord.nvim'
+	-- use 'Th3Whit3Wolf/onebuddy'
+	-- use 'shaunsingh/moonlight.nvim'
 	-- use 'briones-gabriel/darcula-solid.nvim'
 	-- use 'rktjmp/lush.nvim'
 	-- use 'arcticicestudio/nord-vim'
@@ -73,20 +83,26 @@ return packer.startup(function(use)
 	-- use 'vim-airline/vim-airline'  -- Powerline written in vimscript
 
 	-- //\\// ------------------- Syntax highlighting --------------------------- //\\//
-	use 'nvim-treesitter/nvim-treesitter'
+	--use 'nvim-treesitter/nvim-treesitter'
 
 	-- //\\// ------------------- Languages --------------------------- //\\//
-	use 'lervag/vimtex'
-	use 'plasticboy/vim-markdown'
+	--use 'lervag/vimtex'
+	--use 'plasticboy/vim-markdown'
 
 	-- //\\// ------ Debugger Adapter Protoci (DAP) ------ //\\//
-	use 'mfussenegger/nvim-dap'
+	--use 'mfussenegger/nvim-dap'
 
 	-- //\\// ------ Languages general, LSP, snippets, code actions, linting, etc ------ //\\//
+
+	-- use 'williamboman/nvim-lsp-installer' -- Deprecated in favor of mason-nvim
 	use 'neovim/nvim-lsp'
-	use 'williamboman/nvim-lsp-installer'
-	use 'neovim/nvim-lspconfig'
-	use 'onsails/lspkind-nvim'
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	}
+
+	--use 'onsails/lspkind-nvim'
 
 	use { 'hrsh7th/nvim-cmp', requires = 'onsails/lspkind-nvim' }
 
@@ -95,7 +111,7 @@ return packer.startup(function(use)
 	use { 'hrsh7th/cmp-buffer', requires = 'hrsh7th/nvim-cmp' }
 	use { 'hrsh7th/cmp-path', requires = 'hrsh7th/nvim-cmp' }
 
-	use 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
+	--use 'L3MON4D3/LuaSnip' -- Snippet engine written in Lua
 	use { 'saadparwaiz1/cmp_luasnip', requires = 'L3MON4D3/LuaSnip' } -- Autocompleter for luasnip engine
 
 	use { 'rafamadriz/friendly-snippets',
@@ -103,7 +119,9 @@ return packer.startup(function(use)
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip'
 		}
-	} -- Some snippets
+	}
+
+	-- Some snippets
 
 	-- use 'SirVer/ultisnips'			-- Snippet engine written in vimscript
 	-- use "quangnguyen30192/cmp-nvim-ultisnips"	-- Autocompleter for ultisnips engine
@@ -130,23 +148,26 @@ return packer.startup(function(use)
 	-- //\\// ------------------------------- Utils ------------------------------- //\\//
 	use 'tjdevries/colorbuddy.vim'
 	use 'rcarriga/nvim-notify' -- Notification manager
-	use {
+	use {	-- Notification of LSP processes using nvim-notify
 		'mrded/nvim-lsp-notify',
 		config = function()
 			require('lsp-notify').setup({})
 		end
-	} -- Notification of LSP processes using nvim-notify
+	}                        
 
 	use 'windwp/nvim-autopairs' -- Autopairs written in lua
 	-- use 'jiangmiao/auto-pairs' -- Autopairs
 	use 'tpope/vim-commentary' -- Toggle comentaries on code
-	use 'tpope/vim-fugitive' -- Git
-	use 'junegunn/gv.vim' -- Git commit browser
-	use 'szw/vim-maximizer' -- Maximize a buffer temporarly (util for vimspector)
+	--use 'tpope/vim-fugitive' -- Git
+	--use 'junegunn/gv.vim' -- Git commit browser
+	--use 'szw/vim-maximizer' -- Maximize a buffer temporarly (util for vimspector)
 	use "kylechui/nvim-surround" -- Surround tool
 	use 'nvim-lua/plenary.nvim' -- Useful lua functions to complement neovim
 	-- use 'godlygeek/tabular' -- Filter and align text
-	use 'windwp/nvim-ts-autotag' -- Auto close tags (nvim)
+	use {                     -- Auto close tags (nvim)
+		'windwp/nvim-ts-autotag',
+		requires = 'nvim-treesitter/nvim-treesitter'
+	}
 	-- use 'alvan/vim-closetag'    -- Auto close tags (vim)
 	-- use 'norcalli/nvim-colorizer.lja'
 end)

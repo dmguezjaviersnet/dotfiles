@@ -5,7 +5,8 @@ if not status_ok then
 end
 
 nvim_surround.setup {
-	keymaps = { -- vim-surround style keymaps
+	keymaps = {
+	         -- vim-surround style keymaps
 		insert = "ys",
 		visual = "S",
 		delete = "ds",

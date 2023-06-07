@@ -1,55 +1,24 @@
-local M = require("lsp_handlers")
+local opts = require("lsp_handlers")
 
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status_ok then
 	return
 end
 
--- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
--- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
--- 	opts = opts or {}
--- 	opts.border = "rounded"
--- 	opts.location = "top-left"
--- 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
--- end
-
--- Register a handler that will be called for each installed server when it"s ready (i.e. when installation is finished
--- or if the server is already installed).
-lsp_installer.on_server_ready(function(server)
-	local opts = {
-		on_attach = M.on_attach,
-		capabilities = M.capabilities
+mason_lspconfig.setup {
+	ensure_installed = {
+		"lua_ls"
 	}
+}
 
-	if server.name == "jsonls" then
-		local jsonls_opts = require("user.lsp.settings.jsonls")
-		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	end
-
-	if server.name == "sumneko_lua" then
-		local sumneko_opts = require("user.lsp.settings.sumneko_lua_conf")
-		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-	end
-
-	if server.name == "html" then
-		M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-		opts.settings = {
-			configurationSection = { "html", "css", "javascript" },
-			embeddedLanguages = {
-				css = true,
-				javascript = true
-			},
-			provideFormatter = true,
-			capabilities = M.capabilities
+mason_lspconfig.setup_handlers {
+	function(server_name)
+		require("lspconfig")[server_name].setup {
+			on_attach = opts.on_attach,
+			capabilities = opts.capabilities
 		}
 	end
-
-	if server.name == "dartls" then
-		return
-	end
-
-	server:setup(opts)
-end)
+}
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
